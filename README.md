@@ -1,5 +1,7 @@
 # Book Recommendation System
 
+![Home Screen](https://github.com/code-lover636/BookBuddy/assets/77882744/ebd42c0c-ccb1-4377-ba1b-414c09229bd9)
+
 This repository contains a book recommendation system that utilizes collaborative filtering techniques to provide users with personalized book recommendations. The system has two main features: "Popular Books" and "Recommendations Based on Book Name Input." The system is implemented using Python for backend development, React for frontend development, and FastAPI as the web framework. The interface is designed to be user-friendly and mobile-responsive.
 
 ## Features
