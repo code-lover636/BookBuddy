@@ -1,0 +1,80 @@
+@import './global.scss';
+
+.home-page {
+    background: linear-gradient(134deg, #19162B 0%, rgba(40, 30, 95, 0.00) 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    &::-webkit-scrollbar{
+      display: none;
+  };
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  // justify-content: ;
+  align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10em;
+  &::-webkit-scrollbar{
+    background-color: black;
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: linear-gradient(129deg, #BF0000 0%, #1500FB 100%);
+    border-radius: 5px 0px 0px 5px;
+  }
+  h1{
+    padding: 2em .5em 2em 2.5em;
+    color: white;
+    text-align: left;
+  }
+  .display-container {
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 0em 5em;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 2em;
+    column-gap: 2em;
+    &::-webkit-scrollbar{
+      display: none;
+    };
+    .card-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: .5em;
+      background: #19162B;
+      padding: 1em 1em;
+      cursor: pointer;
+      &:hover{
+        transform: scale(1.03);
+      }
+      img{
+        width: 150px;
+        height: 225px;
+        object-fit: cover;
+        background-size: cover;
+        background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Blank_book_on_a_table.jpg/800px-Blank_book_on_a_table.jpg);
+        background-position: center;
+      }
+      small{
+        color: white;
+        font-family: consolas;
+        width: 200px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import "./global.scss";
+
+.welcome-page {
+    background-color: rgb(243, 239, 239);
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    .shelf{
+        width: auto;
+        height: 90vh;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 50%;
+        gap: .5em;
+        transform: translateY(-2em);
+        .heading {
+            font-weight: 900;
+            font-size: 3.5rem;
+            color: #222425;
+            width: 100%;
+          }
+          .sub-heading {
+            font-size: 1rem;
+            font-weight: 500;
+            color: black;
+          }
+        
+          .buttons {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2em;
+            margin-top: 5em;
+            .button1, .button2{
+                font-size: 1rem;
+                font-weight: 600;
+                color: rgb(0, 0, 0);
+                background: white;
+                border: 1px solid black;
+                padding: .25em 2.5em;
+                text-decoration: none;
+                cursor: pointer;
+                &:hover{
+                    background: black;
+                    border: 1px solid black;
+                    color: rgb(255, 0, 0);
+                }
+            }
+            .button2{
+                background: black;
+                border: 1px solid black;
+                color: white;
+                &:hover{
+                    border: 1px solid black;
+                    color: rgb(255, 0, 0);
+                    background: white;
+                }
+            }
+          }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .welcome-page{
+        flex-direction: column;
+        .shelf{
+            display: none;
+        }
+        .wrapper{
+            width: 100%;
+            padding: 1em 2em;
+            align-items: center;
+            .heading{
+                font-size: 3.5rem;
+                
+            }
+            .sub-heading{
+                font-size: 1rem;
+            }
+            .buttons{
+                .button1, .button2{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+  
