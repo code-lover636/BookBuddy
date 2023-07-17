@@ -1,0 +1,7 @@
+import bz2file as bz2
+import pickle
+
+def compressed_pickle(title, data):
+    with bz2.BZ2File(title + '.pbz2', 'w') as f:
+        pickle.dump(data, f)
+compressed_pickle('popular', pickle.load(open('./popular.pkl','rb')))
