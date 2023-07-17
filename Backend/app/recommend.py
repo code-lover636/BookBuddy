@@ -2,6 +2,7 @@ import pandas as pd
 import nltk
 from nltk.corpus import stopwords
 import bz2file as bz2
+import pickle
 
 nltk.download('stopwords')
 
@@ -21,13 +22,13 @@ def match_str(book,df):
 
 def search(book):
     data = bz2.BZ2File('df.pbz2', 'rb')
-    df = pd.read_pickle(data)
+    df = pickle.load(data)
     title = df['Book-Title'].drop_duplicates().reset_index()
     return match_str(book,title.to_dict('records'))
 
 def response(book):
     data = bz2.BZ2File('df.pbz2', 'rb')
-    df = pd.read_pickle(data)
+    df = pickle.load(data)
     df['Book-Title'] = df['Book-Title'].apply(lambda x: x.lower())
     users = df[df['Book-Title']==book.lower()][['User-ID']].reset_index()
     user_rated = df.merge(users, on="User-ID")
@@ -39,7 +40,7 @@ def response(book):
 
 def popular():
     data = bz2.BZ2File('popular.pbz2', 'rb')
-    df = pd.read_pickle(data)
+    df = pickle.load(data)
     df = df.to_dict('records')
     return df[:100]
 
