@@ -4,4 +4,3 @@ uvicorn==0.22.0
 pandas
 nltk
 bz2file
-pickle
