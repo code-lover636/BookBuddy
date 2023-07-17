@@ -10,6 +10,9 @@ $primary-color: rgb(0, 110, 255);;
     padding: 0;
     box-sizing: border-box;
     font-family: $primary-font;
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 #root{
     background-color: black;

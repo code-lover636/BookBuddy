@@ -4,7 +4,7 @@ import '../styles/WelcomePage.scss';
 const WelcomePage = () => {
   return (
     <div className="welcome-page">
-        <div className="wrapper">
+        <div className="wrapper1">
             <h1 className="heading">Say, partner, fancy a good ol' book?</h1>
             <h2 className="sub-heading">Machine learning based book recommendation system.</h2>
             <div className="buttons">

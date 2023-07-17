@@ -3,7 +3,8 @@ import '../../styles/Navbar.scss'
 
 import { FiHome, FiInfo, FiLogOut, FiSearch } from 'react-icons/fi';
 
-const Navbar = () => {
+
+const Navbar = ({page, setPage}) => {
   return (
     <div className="navbar">
         <div className="navbar__logo">
@@ -20,13 +21,13 @@ const Navbar = () => {
         </div>
         <ul className="navbar__links">
             <li className="navbar__links-item">
-                <a href="/home">
+                <a href="/home" onClick={e => {e.preventDefault(); setPage(0)}}>
                 <FiHome className="navbar__links-icon" />
                 Home
                 </a>
             </li>
             <li className="navbar__links-item">
-                <a href="#">
+                <a href="/home" onClick={e => {e.preventDefault(); setPage(1)}}>
                 <FiSearch className="navbar__links-icon" />
                 Search
                 </a>
@@ -39,10 +40,10 @@ const Navbar = () => {
             </li>
         </ul>
         <div className="navbar__logout">
-        <button className="navbar__logout-button">
-            <FiLogOut className="navbar__logout-icon" />
+        <a href="/" className="navbar__logout-button">
+            <FiLogOut className="navbar__logout-icon"/>
             Logout
-        </button>
+        </a>
         </div>
     </div>
   )

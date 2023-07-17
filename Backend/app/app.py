@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from .recommend import response, popular
-
+from .recommend import response, popular, search
 
 import json
 
@@ -23,14 +22,28 @@ async def root():
 
 class MyData(BaseModel):
     text: str
-    
+
+
 # Post
+@app.post("/search",tags=['recom'])
+async def post(data: MyData):
+    text = data.json()
+    text = text[len('{"term: " '):- len('"}')]
+    res = search(text)
+    print(text)
+    print(res)
+    res = list(res.keys())
+    return {
+            "status":"Success",
+            "reply": res
+            }
+
 @app.post("/recommend",tags=['recom'])
 async def post(data: MyData):
     text = data.json()
-    text = text[len('{"text: " '):- len('"}')]
+    text = text[len('{"term: " '):- len('"}')]
     res = response(text)
-    print("Text:", text)
+    print(text)
     print(res)
     return {
             "status":"Success",
